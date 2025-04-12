@@ -1,4 +1,4 @@
-package entity;
+package com.franquicia.prueba.entidad;
 
 import java.util.List;
 
