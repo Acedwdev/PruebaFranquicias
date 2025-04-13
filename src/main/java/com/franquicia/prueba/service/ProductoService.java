@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.franquicia.prueba.entidad.Producto;
+import com.franquicia.prueba.entidad.Sucursal;
 import com.franquicia.prueba.repository.ProductoRepository;
 
 @Service
@@ -29,4 +30,9 @@ public class ProductoService {
     public void deleteById(Long id) {
         repository.deleteById(id);
     }
+    
+    public Optional<Producto> findProductoConMasStockPorSucursal(Sucursal sucursal) {
+        return repository.findTopBySucursalOrderByStockDesc(sucursal);
+    }
+
 }
